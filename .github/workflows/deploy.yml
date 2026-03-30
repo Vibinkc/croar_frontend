@@ -44,5 +44,5 @@ jobs:
           script: |
             echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
             cd ~/croar-app
-            docker compose pull frontend
-            docker compose up -d frontend
+            docker-compose pull frontend
+            docker-compose up -d frontend
