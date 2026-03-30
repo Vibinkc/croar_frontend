@@ -11,6 +11,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Check Secrets
+        run: |
+          if [ -z "${{ secrets.DOCKERHUB_USERNAME }}" ]; then echo "CRITICAL ERROR: DOCKERHUB_USERNAME is missing from GitHub Secrets!"; exit 1; fi
+          if [ -z "${{ secrets.DOCKERHUB_TOKEN }}" ]; then echo "CRITICAL ERROR: DOCKERHUB_TOKEN is missing from GitHub Secrets!"; exit 1; fi
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
