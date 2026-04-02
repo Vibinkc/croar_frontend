@@ -30,6 +30,8 @@ jobs:
           tags: |
             appxcess/croar_web:latest
             appxcess/croar_web:v0.${{ github.run_number }}
+          build-args: |
+            NEXT_PUBLIC_API_URL=http://3.94.202.48:8000
 
   deploy:
     needs: build-and-push
