@@ -18,6 +18,8 @@ COPY . .
 # Pass build arguments to environment variables for Next.js build
 ARG NEXT_PUBLIC_API_URL
 ENV NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
+ARG NEXT_PUBLIC_FRONTEND_DOMAIN
+ENV NEXT_PUBLIC_FRONTEND_DOMAIN=${NEXT_PUBLIC_FRONTEND_DOMAIN}
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry

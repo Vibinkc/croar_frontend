@@ -31,7 +31,8 @@ jobs:
             appxcess/croar_web:latest
             appxcess/croar_web:v0.${{ github.run_number }}
           build-args: |
-            NEXT_PUBLIC_API_URL=http://3.94.202.48:8000
+            NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL || 'http://3.94.202.48:8000' }}
+            NEXT_PUBLIC_FRONTEND_DOMAIN=${{ secrets.NEXT_PUBLIC_FRONTEND_DOMAIN || '3.94.202.48' }}
 
   deploy:
     needs: build-and-push
