@@ -48,6 +48,12 @@ jobs:
             echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
             export WEB_VERSION=v0.${{ github.run_number }}
             cd ~/croar-app
+            
+            # Explicitly pull the versioned image to bypass cache
             docker-compose pull frontend
-            docker-compose up -d frontend
-            docker image prune -a -f --filter "until=24h"
+            
+            # Force recreate to ensure the new image is used
+            docker-compose up -d --force-recreate frontend
+            
+            # Immediate cleanup to save disk space
+            docker image prune -a -f --filter "until=1h"
