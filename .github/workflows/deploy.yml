@@ -46,6 +46,8 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+            export WEB_VERSION=v0.${{ github.run_number }}
             cd ~/croar-app
             docker-compose pull frontend
             docker-compose up -d frontend
+            docker image prune -a -f --filter "until=24h"
