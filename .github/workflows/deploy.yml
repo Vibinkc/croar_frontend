@@ -33,7 +33,7 @@ jobs:
           build-args: |
             NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL || 'https://api.croar.co' }}
             NEXT_PUBLIC_FRONTEND_DOMAIN=${{ secrets.NEXT_PUBLIC_FRONTEND_DOMAIN || 'app.croar.co' }}
-            NEXT_PUBLIC_GOOGLE_CLIENT_ID=${{ secrets.NEXT_PUBLIC_GOOGLE_CLIENT_ID || '1092028128011-v2uittleta4ve4li13snc7mbt22r2k9j.apps.googleusercontent.com' }}
+            NEXT_PUBLIC_GOOGLE_CLIENT_ID=${{ secrets.NEXT_PUBLIC_GOOGLE_CLIENT_ID || '877375469151-qgm9b09c5kfcq333lqscikkajc48bl9o.apps.googleusercontent.com' }}
             NEXT_PUBLIC_MS_CLIENT_ID=${{ secrets.NEXT_PUBLIC_MS_CLIENT_ID || 'eda3b961-a69c-41c9-b867-d5af60bd0e06' }}
             NEXT_PUBLIC_MS_TENANT_ID=${{ secrets.NEXT_PUBLIC_MS_TENANT_ID || 'common' }}
 
